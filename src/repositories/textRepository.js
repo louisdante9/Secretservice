@@ -2,6 +2,7 @@ import { User } from "../models";
 
 export const create = async () => {
   try {
+      
   } catch (error) {
     return error;
   }
@@ -9,6 +10,7 @@ export const create = async () => {
 
 export const getOne = async () => {
   try {
+
   } catch (error) {
     return error;
   }
