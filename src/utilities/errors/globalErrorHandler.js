@@ -1,4 +1,5 @@
 export const globalErrorHandler = (err, req, res, next) => {
+  console.log(err)
   if (err.code) {
     return res.status(err.code).json(err);
   }
