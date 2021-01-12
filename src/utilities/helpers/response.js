@@ -19,9 +19,7 @@ export const success = (res, body = {}) => res.status(OK).json(body);
  * @param {any} body
  */
 export const created = (res, body={}) => {
-  res.status(CREATED).json({
-    ...body
-  });
+  res.status(CREATED).json(body);
 };
 
 /**
