@@ -16,6 +16,7 @@ app.use(json(), urlencoded({ extended: false }), morgan("dev"), cors());
 db(config)
   .then(() => {
     app.use("/v1", routes(express));
+    
     app.use(globalErrorHandler);
 
     app.listen(port, (err) => {
@@ -28,3 +29,5 @@ db(config)
   .catch((err) => {
     throw new Error(`Connection error: ${err.message}`);
   });
+export default app;
+

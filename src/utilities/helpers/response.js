@@ -1,6 +1,6 @@
 import { StatusCodes } from 'http-status-codes';
 
-const { OK, CREATED, NOT_FOUND } = StatusCodes;
+const { OK, CREATED, NOT_FOUND, CONFLICT, UNAUTHORIZED } = StatusCodes;
 
 /**
  * Returns a json response with status code 200 and a response body
@@ -18,7 +18,7 @@ export const success = (res, body = {}) => res.status(OK).json(body);
  * @param {any} res
  * @param {any} body
  */
-export const created = (res, body) => {
+export const created = (res, body={}) => {
   res.status(CREATED).json({
     ...body
   });
@@ -33,5 +33,27 @@ export const created = (res, body) => {
 export const notFound = (res, message) => {
   res.status(NOT_FOUND).json({
     message
+  });
+};
+/**
+ * Returns a json response with status code 409 and a response message
+ *
+ * @param {any} res
+ * @param {any} message
+ */
+export const conflict = (res, message) => {
+  res.status(CONFLICT).json({
+    message
+  });
+};
+/**
+ * Returns a json response with status code 409 and a response message
+ *
+ * @param {any} res
+ * @param {any} message
+ */
+export const unauthorized = (res, message) => {
+  res.status(UNAUTHORIZED).json({
+    message,
   });
 };
