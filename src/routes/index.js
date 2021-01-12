@@ -12,5 +12,11 @@ export const routes = ({ Router }) => {
   router.post('/register', AsyncWrapper(register))
   router.post('/login', AsyncWrapper(login))
 
+  router.get("*",  (req, res)=> {
+    res
+      .status(404)
+      .send({ message: "you are trying to access an unknow route" });
+  });
+
   return router;
 };

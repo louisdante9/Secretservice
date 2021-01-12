@@ -22,7 +22,6 @@ import {conflict, unauthorized} from '../utilities/helpers/response'
      });
       if (!user && !user.validPassword(password)) {
         return unauthorized(res, "Failed to authenticate user");
-        return res.status(401).send({ message: "Failed to authenticate user" });
       }
     return [user, null]
     

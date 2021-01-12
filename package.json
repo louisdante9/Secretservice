@@ -2,9 +2,9 @@
   "name": "secretservice",
   "version": "1.0.0",
   "description": "this is a test application",
-  "main": "server.js",
+  "main": "src/server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "NODE_ENV=test nyc --reporter=html --reporter=lcov --reporter=text mocha --timeout 500000 test/**/* --exit",
     "start": "node dist/server.js",
     "dev": "NODE_ENV=development nodemon ./src/server.js  --watch ./src --exec babel-node",
     "build": "babel src -d dist"
@@ -31,8 +31,15 @@
     "@babel/cli": "^7.12.8",
     "@babel/core": "^7.12.9",
     "@babel/node": "^7.12.6",
+    "@babel/polyfill": "^7.12.1",
     "@babel/preset-env": "^7.12.7",
-    "morgan": "^1.10.0"
+    "@babel/register": "^7.12.10",
+    "chai": "^4.2.0",
+    "faker": "^5.1.0",
+    "mocha": "^8.2.1",
+    "morgan": "^1.10.0",
+    "nyc": "^15.1.0",
+    "supertest": "^6.0.1"
   },
   "keywords": [],
   "author": "louis nwamadi",
