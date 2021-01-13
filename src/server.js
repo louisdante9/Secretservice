@@ -9,7 +9,7 @@ import config from "./config";
 dotenv.config();
 
 const app = express();
-const port = parseInt(process.env.PORT) || 3000;
+const port = parseInt(process.env.PORT) || 3001;
 
 app.use(json(), urlencoded({ extended: false }), morgan("dev"), cors());
 
